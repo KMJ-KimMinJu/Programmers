@@ -1,0 +1,13 @@
+import java.util.Arrays;
+
+class Solution {
+    public int[][] solution(int[] num_list, int n) {
+        int[][] answer = new int[num_list.length/n][n];
+        int idx = 0;
+        for(int i = 0; i<(num_list.length/n); i++){
+            answer[i] = Arrays.copyOfRange(num_list, idx, idx+(n));
+            idx += n;
+        }
+        return answer;
+    }
+}
