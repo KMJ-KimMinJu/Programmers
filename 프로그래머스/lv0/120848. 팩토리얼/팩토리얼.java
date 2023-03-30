@@ -1,28 +1,23 @@
 class Solution {
-    
-    public static int fac(int n){
-        if(n == 1)
-            return 1;
-        return n * fac(n-1);
-    }
-    
-    
-    public int solution(int n) {
-        
-        int idx = 0;
-        for(int i = 1; i<=10 ; i++){
-            if(n < fac(i)){
-                idx = i-1;
-                break;
+    public int solution(int n){
+        int answer = 0;
+        int factorial = 1;
+        int index = 1;
+        while(factorial <= n){
+            factorial *= index;
+
+            if(factorial <= n){
+                 index++;
+             }else if(factorial == n){
+                 answer = index;
+             }else if(n < factorial){
+                answer = (index-1);
+            } 
+            if(factorial == 0){
+                answer = 0;
+                return answer;
             }
-            if(n == fac(i)){
-                idx = i;
-                break;
-                
-            }
-            
         }
-        
-        return idx;
+        return answer;
     }
 }
