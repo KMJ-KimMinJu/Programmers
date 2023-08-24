@@ -57,6 +57,15 @@ public class Main {
             }
         }
 
+                if(left==right){
+            if(sort[left] < pivot){
+                return right;
+            }else{
+                return left;
+            }
+
+        }
+
         return left;
     }
 }
