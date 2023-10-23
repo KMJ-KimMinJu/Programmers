@@ -65,7 +65,7 @@ public class Main {
             //Min(선택 노드의 최단 거리 배열의 값 + 엣지 가중치 , 연결 노드의 최단거리 배열의 값)
 
             //x-1
-            if((nodeIndex-1 >= 0 && nodeIndex-1 <= 100000) && weight + 1 < distance[nodeIndex-1]){ //가중치 비교 --> 이동했을 때의 시간 + 현재 이동한 시간
+            if((nodeIndex-1 >= 0 && nodeIndex-1 <= 100000) && weight + 1 < distance[nodeIndex-1]){ //가중치 비교 --> 그곳으로 이동했을 때의 시간과 그곳으로 가기까지의 최소시간
                 distance[nodeIndex-1] = weight+1;
                 pq.offer(new Node(nodeIndex-1, distance[nodeIndex-1]));
             }
