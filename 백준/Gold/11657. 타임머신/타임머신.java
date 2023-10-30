@@ -1,4 +1,3 @@
-
 import java.io.*;
 import java.util.*;
 
@@ -42,6 +41,8 @@ public class Main {
         Arrays.fill(distance, Long.MAX_VALUE);
         distance[1] = 0;
 
+        //모든 노드와 모든 간선을 확인해주기 위해서 이중 for문 사용
+        //N-1개의 경로를 확인해줌
         for(int i = 0; i<n; i++){
             for(int j = 0; j<m; j++){
                 Node node = edge.get(j); //현재 간선
