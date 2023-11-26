@@ -1,16 +1,16 @@
-function solution(a, b, n) {
+function coke(a,b,n,bottle){ //a,b,남은 콜라,바꿔마신 콜라
     
-    let count = 0;
-    
-    while(true){
-        let rest = (n%a);
-        count += parseInt(n/a)*b;
-        n = parseInt(n/a)*b + rest;
-        
-        if(n < a){
-            break;
-        }
+    if(n < a){
+        return bottle;
     }
     
-    return count;
+    bottle += parseInt(n/a)*b;
+    n = parseInt(n/a)*b+(n%a);
+    
+    return coke(a,b,n,bottle);
+}
+
+function solution(a, b, n) {
+    
+    return coke(a,b,n,0)
 }
