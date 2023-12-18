@@ -11,7 +11,7 @@ public class Main {
 
         int N = Integer.parseInt(st.nextToken());
 
-        int[] DP = new int[N+1];// 최대 수익
+        int[] DP = new int[N+1];// 최대 점수
 
         int[] score = new int[N+1];
 
