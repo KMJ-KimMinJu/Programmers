@@ -2,30 +2,33 @@ import java.util.*;
 
 class Solution {
     public int solution(int[] arr) {
-        
-        // Arrays.sort(arr);
-        
-        int result = arr[0];
-        
-        for(int i = 1; i<arr.length; i++){
-            result = LCM(result, arr[i]);
+        int answer = 0;
+
+        Stack<Integer> pq = new Stack<>();
+        for(int i=0; i<arr.length; i++){
+            pq.add(arr[i]);
         }
-        
-        return result;
-    }
-    
-    //최대공약수
-    public static int GCD(int a, int b){
-        if(b == 0) {
-            return a;
+
+        if(pq.size() == 1){
+            return pq.peek();
         }
-        
-        return GCD(b, a % b);
+
+        while(pq.size() > 1){
+            int num1 = pq.pop();
+            int num2 = pq.pop();
+
+            long gcd = 1;
+
+            for(int i=1; i<=num1; i++){
+                if(num1 % i == 0 && num2 % i == 0){
+                    gcd = i;
+                }
+            }
+
+            gcd = (num1 * num2) / gcd;
+            pq.add((int)gcd);
+        }
+
+        return pq.peek();
     }
-    
-    //최소공배수
-    public static int LCM(int result, int arr){
-        return (result * arr) / GCD(result, arr);
-    }
-    
 }
