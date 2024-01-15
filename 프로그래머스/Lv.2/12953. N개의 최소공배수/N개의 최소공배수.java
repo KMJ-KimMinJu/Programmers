@@ -3,7 +3,7 @@ import java.util.*;
 class Solution {
     public int solution(int[] arr) {
         
-        Arrays.sort(arr);
+        // Arrays.sort(arr);
         
         int result = arr[0];
         
