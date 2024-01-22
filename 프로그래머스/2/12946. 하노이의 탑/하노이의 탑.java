@@ -12,7 +12,7 @@ class Solution {
         
             hanoi(n-1, start, from, p);
             list.add(new int[] {start, from});
-            //System.out.println(n+"번 원반을 " + A + "에서" + C+"로 이동");
+            
             hanoi(n-1, p, start, from);
     }
     
