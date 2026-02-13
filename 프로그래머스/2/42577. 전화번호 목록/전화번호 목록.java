@@ -5,22 +5,24 @@ class Solution {
         
         Arrays.sort(phone_book);
         
-        HashMap<Integer,String> map = new HashMap<>();
-        boolean answer = true;
+        HashMap<Integer, String> numbers = new HashMap<>();
         
-        for(int i = 0; i<phone_book.length; i++){
-            map.put(i,phone_book[i]);
+        for(int i = 0; i < phone_book.length; i++){
+            numbers.put(i, phone_book[i]);
         }
         
-        for(int i = 0; i<map.size()-1; i++){
-            String number = map.get(i);
-            String number2 = map.get(i+1);
+        boolean answer = true;
+        
+        for(int i = 0; i < phone_book.length-1; i++){
+            String first = numbers.get(i);
             
-                if(number2.startsWith(number)){
+                String second = numbers.get(i+1);
+                
+                if(second.startsWith(first)){
                     answer = false;
-                    return answer;
+                    break;
                 }
-            
+
         }
         
         return answer;
